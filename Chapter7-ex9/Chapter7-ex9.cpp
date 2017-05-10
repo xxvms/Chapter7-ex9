@@ -18,18 +18,20 @@ public:
 	void put(Queue& queue1_) // put member on array
 	{
 		std::cout << "Number: ";
-		back = (back % MAX) + 1;
+		back = (back % MAX);
 		std::cin >> number[back];
+		back++;
 	}
 	void get(Queue& queue_) // take number off array
 	{
 		std::cout << "Number: ";
+		front = (front % MAX);
 		std::cin >> number[front];
-		front++;
+		front--;
 	}
 	bool fullQueue(Queue queue1_) // check if the queue is full
 	{
-		if (front == (back % MAX) +1) 
+		if (front == (back % MAX)-1) 
 		{
 			std::cout << "Full queue!!" << std::endl;
 			return 1;
